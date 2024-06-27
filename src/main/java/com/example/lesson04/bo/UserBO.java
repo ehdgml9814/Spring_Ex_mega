@@ -24,4 +24,10 @@ public class UserBO {
 	public User getLatestUser() {
 		return userMapper.selectLatestUser();
 	}
+	
+	// input: name 
+	// output: boolean(count에 따라 달라짐)
+	public boolean isDuplicationByName(String name) {
+		return userMapper.isDuplicationByName(name);
+	}
 }
