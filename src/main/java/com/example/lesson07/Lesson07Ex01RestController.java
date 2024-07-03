@@ -25,4 +25,19 @@ public class Lesson07Ex01RestController {
 		
 		return studentBO.addStudent(name, phoneNumber, email, dreamJob);
 	}
+	
+	// Update
+	@GetMapping("/update")
+	public StudentEntity update() {
+		// id가 9번인 dreamJob을 변경(야구선수)
+		return studentBO.updateStudentDreamJobById(9, "야구선수");
+	}
+	
+	// delete
+	@GetMapping("/delete")
+	public String delete() {
+		// id가 8인 데이터 삭제
+		studentBO.deleteStudentById(8);
+		return "삭제 성공";
+	}
 }
